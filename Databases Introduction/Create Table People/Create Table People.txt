@@ -13,8 +13,8 @@ CHECK ([Gender]='f' OR [Gender] ='m'),
 
 INSERT INTO [People]([Id],[Gender],[Birthdate])
 VALUES
-(1,'Kolyo','F','2022-05-12'),
-(2,'Ivan','M','2019-06-10'),
-(3,'Petio','F','2020-04-11'),
-(4,'Pesho','F','2021-03-12'),
-(5,'Nikola','F','2021-02-9')
+('Kolyo','F','2022-05-12'),
+('Ivan','M','2019-06-10'),
+('Petio','F','2020-04-11'),
+('Pesho','F','2021-03-12'),
+('Nikola','F','2021-02-9')
