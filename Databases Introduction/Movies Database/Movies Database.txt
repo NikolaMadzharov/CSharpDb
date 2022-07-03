@@ -1,0 +1,67 @@
+
+
+
+
+
+CREATE TABLE [Directors](
+[Id] INT PRIMARY KEY IDENTITY,
+[DirectorName] NVARCHAR(20) NOT NULL,
+[Notes] NVARCHAR(MAX)
+)
+
+
+
+CREATE TABLE [Genres](
+[Id] INT PRIMARY KEY IDENTITY,
+[GenreName] NVARCHAR(30) NOT NULL,
+[Notes] NVARCHAR(MAX)
+)
+
+
+CREATE TABLE Categories(
+[Id]INT PRIMARY KEY IDENTITY,
+[Categories] NVARCHAR(20) NOT NULL,
+[Notes] NVARCHAR(MAX)
+)
+
+CREATE TABLE [Movies](
+[Id] INT PRIMARY KEY IDENTITY,
+[Title] NVARCHAR(30) NOT NULL,
+[DirectorId] INT FOREIGN KEY REFERENCES [Directors](Id),
+[CopyrightYear] CHAR(4) NOT NULL,
+[Length] INT NOT NULL,
+[GenreId] INT FOREIGN KEY REFERENCES [Genres](Id),
+[CategoryId] INT FOREIGN KEY REFERENCES [Categories](Id),
+[Raiting] TINYINT,
+[Notes] NVARCHAR(MAX)
+)
+
+
+
+
+
+INSERT INTO [Directors]([DirectorName])
+VALUES
+('KOLYO'),
+('MIRO'),
+('IVAN')
+
+
+INSERT INTO [Genres]([GenreName])
+VALUES
+('HORROR'),
+('SCIENCE FICTION'),
+('CARTOON')
+
+INSERT INTO [Categories]([Categories])
+VALUES
+('FOR ADULTS'),
+('FOR KIDS'),
+('BEST SELLING')
+
+
+INSERT INTO [Movies]([Title],[DirectorId],[CopyrightYear],[Length],[GenreId],[CategoryId],[Raiting])
+VALUES
+('IT',1,2010,140,1,1,65),
+('SAW',1,2019,150,1,1,90),
+('STRANGER THINGS',1,2022,100,1,1,9)
