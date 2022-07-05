@@ -1,0 +1,15 @@
+CREATE TABLE [Students](
+[Students] INT PRIMARY KEY IDENTITY,
+[Name] NVARCHAR(30) NOT NULL
+)
+
+CREATE TABLE[Exams](
+[ExamID] INT PRIMARY KEY IDENTITY(101,1),
+[Name] NVARCHAR(30) NOT NULL
+)
+
+CREATE TABLE [StudentsExams](
+[StudentID] INT FOREIGN KEY REFERENCES [Students]([Students]),
+[ExamID] INT FOREIGN KEY REFERENCES [Exams]([ExamID]),
+PRIMARY KEY ([StudentID],[ExamID])
+)
